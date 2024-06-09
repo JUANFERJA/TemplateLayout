@@ -1,0 +1,141 @@
+.App{
+    height: 100vh;
+    width: 100vw;
+    background: rebeccapurple;
+    .navbarCustom{
+        height: 8%;
+        background: lightcoral;
+    }
+
+    .cuerpo{
+        height: 92%;
+        background: lawngreen;
+        
+        .sidebar{
+            width: 15%;
+            background: #747B94;
+            height: 100%;
+            transition: linear 300ms;
+            .menuCollapse{
+                margin-top: 30px;
+                background: transparent;
+                color: #465D5F;
+                .card{
+                    background: transparent;
+                    
+                    .fa2{
+                        font-size: 6px;
+                        /* color: #2b4042; */
+                        /* margin-right: auto; */
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        width: 10%;
+                    }
+                    .text{
+                        text-decoration: none;
+                        color: #2b4042;
+                        font-size: 20px;
+                        font-weight: 800;
+                        width: 85%;
+                        text-align: initial;                    
+                    }
+                    .text2{
+                        text-decoration: none;
+                        color: #2b4042;
+                        font-size: 14px;
+                        font-weight: 800;
+                        width: 85%;
+                        text-align: initial;                    
+                    }
+                }
+            }
+        }
+
+        .main{
+            width: 85%;
+            background: #465D5F;
+            height: 100%;
+            transition: linear 300ms;
+        }
+    }
+    .fa1{
+        font-size: 26px;
+        color: #2b4042;
+        margin-right: auto;
+        width: 10%;
+    }
+
+    .faHamburguer{
+        font-size: 26px;
+        color: white;
+        margin-right: auto;    
+        width: 3%;   
+        cursor: pointer;
+    }
+
+    .Sidebarmove{
+        height: 92%;
+        background: lawngreen;
+        .sidebar{
+            width: 5%;
+            background: #747B94;
+            height: 100%;
+            transition: linear 300ms;
+            .menuCollapse{
+                margin-top: 30px;
+                background: transparent;
+                color: #465D5F;
+                .card{
+                    background: transparent;
+                    
+                    .fa2{
+                        font-size: 6px;
+                        /* color: #2b4042; */
+                        /* margin-right: auto; */
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        width: 10%;
+                    }
+                    .text{
+                        text-decoration: none;
+                        color: #2b4042;
+                        font-size: 20px;
+                        font-weight: 800;
+                        width: 85%;
+                        text-align: initial;    
+                        .span{
+                            display: none;
+                        }
+                    }
+                    .text2{
+                        text-decoration: none;
+                        color: #2b4042;
+                        font-size: 14px;
+                        font-weight: 800;
+                        width: 85%;
+                        text-align: initial;                    
+                    }
+                }
+
+                .children{
+                    background: #747B94;
+                    position: relative;
+                    margin-left: 55%;
+                    margin-top: -25%;
+                    max-width: 200px;
+                    width: 200px;
+                }
+            }
+        }
+
+        .main{
+            width: 95%;
+            background: #465D5F;
+            height: 100%;
+        }
+    }
+
+    .left3{
+        margin-left: 15px;
+    }
+}
