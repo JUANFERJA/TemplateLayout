@@ -7,9 +7,13 @@ export const funcionCollapseSidebar = () => {
     Sidebar.classList.toggle("Sidebarmove");
   }
 
-
+ const outLogin = (setLogin, navigate) =>{
+  setLogin(false);
+  navigate("/Login");
+ }
 
   return{
-    collapseSidebar
+    collapseSidebar,
+    outLogin
   }
 }

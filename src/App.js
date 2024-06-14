@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import { Sidebar } from './components/Sidebar';
 import './styles/layout.scss'
-import { NavBar } from './components/NavBar';
+
+import { UserProvider } from './context/UserProvider';
+import { MasterPage } from './pages/MasterPage';
+import { BrowserRouter } from 'react-router-dom';
 function App() {
 
   
   return (
-    <div className="App">
-      <div className='navbarCustom'>
-        <NavBar/>
-      </div>
-      <div className="cuerpo d-flex flex-row" id='cuerpo'>
-        <div className='sidebar'>
-          <Sidebar/>
+    <UserProvider>
+      <BrowserRouter>      
+        <div className="App">
+          <MasterPage/>
         </div>
-        <div className='main'>
-
-        </div>
-      </div>
-    </div>
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 

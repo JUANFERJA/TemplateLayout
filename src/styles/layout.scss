@@ -1,7 +1,7 @@
 .App{
     height: 100vh;
     width: 100vw;
-    background: rebeccapurple;
+    background: #2b4042;
     .navbarCustom{
         height: 8%;
         background: lightcoral;
@@ -37,7 +37,8 @@
                         font-size: 20px;
                         font-weight: 800;
                         width: 85%;
-                        text-align: initial;                    
+                        text-align: initial;   
+                        cursor: pointer;                 
                     }
                     .text2{
                         text-decoration: none;
@@ -47,6 +48,7 @@
                         width: 85%;
                         text-align: initial;                    
                     }
+                   
                 }
             }
         }

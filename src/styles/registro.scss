@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+.containerRegistro{
+    background: black;
+    height: 100vh;
+    .card{
+        background: black;
+        box-shadow: 4px 0px 6px 6px rgba(98, 236, 236, 0.25);
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        height: 80%;
+        width: 60%;
+        .card-header{
+            background: transparent;
+            border-bottom: solid 2px rgba(98, 236, 236, 0.25);
+            h4{
+                text-align: initial;
+                font-family: "Roboto";
+                color: grey
+            }
+            .ilogin{
+                font-size: 30px;
+                margin-left: auto;
+                color: grey;
+            }
+        }
+        .formRegistro{
+            margin-left: auto;
+            margin-right: auto;
+            .form-label{
+                text-align: initial;
+                color: antiquewhite;
+                margin: 0;
+            }
+            .required{
+                color: #F68C9F;
+                font-size: 12px;
+                text-align: initial;
+                margin: 0;
+            }
+        }
+    }
+}

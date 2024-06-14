@@ -1,0 +1,56 @@
+.nuevoReclamo{
+    background: #0b1a1b;;
+    width: 90%;
+    height: 100%;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    h3{
+        text-align: initial;
+        margin-left: 3%;
+        margin-top: 3%;
+        padding: 0;
+    }
+    .upLoadFiles{
+        width: 40%;
+        margin-left: 15%;
+        .controlNuevoReclamo{        
+       
+            .btnDocumento{
+                margin-top: 5px;
+                .btnSelect{
+                    color: antiquewhite;
+                }
+            }
+            .selecDocumento{
+                display: none;
+            }
+        }        
+    }
+
+    .datosControles{
+        margin-left: 15%;
+        width: 60%;
+        .controlDatos{
+            margin-top: 3%;
+            .lbl{
+                width: 250px;
+                text-align: end;
+            }
+            color:white;
+            .input{
+                margin-left: 10px;
+            }
+        }
+    }
+    .txt{
+        color: white;
+        margin-right: auto;
+    }
+
+    .save{
+        width: 150px;
+        margin-left: auto;
+        margin-top: 3.5%;
+    }
+}
