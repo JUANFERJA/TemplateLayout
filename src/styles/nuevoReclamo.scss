@@ -30,15 +30,23 @@
 
     .datosControles{
         margin-left: 15%;
-        width: 60%;
+        width: 75%;
         .controlDatos{
             margin-top: 3%;
             .lbl{
-                width: 250px;
+                width: 150px;
                 text-align: end;
+            }
+            .react-datepicker-wrapper{
+                width: 62%;
             }
             color:white;
             .input{
+                margin-left: 10px;
+                width: 80%;
+            }
+            .input2{
+                width: 60%;
                 margin-left: 10px;
             }
         }

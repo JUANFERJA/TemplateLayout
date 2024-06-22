@@ -8,7 +8,7 @@ export const RoutesApp = () => {
   const{user} = useContext(UserContext);
   return (
     <Routes>
-        <Route path={`/reclamos/:idUsuario`}
+        <Route path={`/misReclamos/:idUsuario`}
                element={<ReaclamosPage user={user}/>}>
         </Route> 
         <Route path={`/nuevoReclamo/:idUsuario`}

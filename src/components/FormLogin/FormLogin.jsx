@@ -9,13 +9,13 @@ import { funcionesForms } from '../../Functions/funcionesForms';
 export const FormLogin = () => {
     const {setuser, setlogin} = useContext(UserContext);
     let navigate = useNavigate();
-    const {login} = funciones();
+    const {validaDatos} = funciones();
     const {addValue} = funcionesForms();
     const [usuario, setusuario] = useState("");
     const [pass, setpass] = useState("");
 
   return (
-        <form  className='formLogin'>
+        <div  className='formLogin'>
             <div className="mb-3 mt-5 control d-flex flex-column">
               <label for="email" className="form-label" id="usuario">Usuario:</label>
               <input type="email" className="form-control" placeholder="ingrese su usuario" name="usuario" onChange={(e)=>addValue(e.target, "usuario", setusuario)}/>
@@ -31,12 +31,12 @@ export const FormLogin = () => {
                 <input className="form-check-input" type="checkbox" name="remember"/> Captcha
                 </label>
             </div>
-            <button className="btn btn-secondary" onClick={() =>login(usuario, pass, setuser, setlogin, navigate)}>Submit</button>
+            <button className="btn btn-secondary" onClick={() =>validaDatos(usuario, pass, setuser, setlogin, navigate)}>Submit</button>
             <div className="mb-3">
                 <Link to="/Registro"className="text-white">
                   Registrarse
                 </Link>
             </div>
-    </form> 
+    </div> 
   )
 }
