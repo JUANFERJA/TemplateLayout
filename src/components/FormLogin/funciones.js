@@ -31,7 +31,8 @@ export const funciones = () => {
     if (!res.err) {     
         setuser(res);
         setlogin(true);
-        navigate(`/misReclamos/${res.rol_id}`);
+        let urlComponent = res.rol_id == 2 ? "analistReclamos" : "insuredReclamos";
+        navigate(`/${urlComponent}/${res.rol_id}`);
              
     }else{
       console.log(res);

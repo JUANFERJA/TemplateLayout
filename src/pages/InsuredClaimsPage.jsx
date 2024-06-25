@@ -8,7 +8,7 @@ import { UserContext } from '../context/UserContext';
 let  api = helpHttp();
 
 const {apiPathJava} = paths();
-export const ReaclamosPage = () => {
+export const InsuredClaimsPage = () => {
   
   
   return (
@@ -39,8 +39,9 @@ const MisReclamos = () =>{
   const [claims, setclaims] = useState();
  
   useEffect(() => {
-    console.log("entra el aefect");         
-    let url = `${apiPathJava}getAllClaims/${user_id}`;
+             
+    let url = `${apiPathJava}getAllClaimsInsured/${user_id}`;
+    console.log("entra el aefect", url);
     let options = {    
         headers: { 
             'Authorization': `Bearer ${jwt}`,
@@ -49,8 +50,8 @@ const MisReclamos = () =>{
     };
 
     api.get(url, options).then((res) => {
-    if (!res.err) {     
-        console.log("en lo correcto",res);        
+    if (!res.err) {
+                
         setclaims(res);  
     }else{
       console.log(res);
@@ -58,6 +59,7 @@ const MisReclamos = () =>{
       swal("Ups!",res.statusText+": token o usuario no autorizado", "error");
     }});
     }, [])
+
   return(
     <>
       {

@@ -71,7 +71,7 @@ export const funcionesRegistrarReclamo = () => {
       "sinister_date":fechaSiniestro,
       "description":descripcion,
       "state":state,
-      "user_id":user_id
+      "insured_id;":user_id
     }
     console.log("data para un nuevo reclamo", data)
     data.id = Date.now();

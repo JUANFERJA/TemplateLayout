@@ -9,7 +9,7 @@ import { OptionBeneficiario } from '../components/FormNuevoReclamo/OptionBenefic
 import { OptionDiagnostico } from '../components/FormNuevoReclamo/OptionDiagnostico';
 import { useNavigate } from 'react-router-dom';
 
-export const NuevoReclamoPage = () => {
+export const NewClaimPage = () => {
     const navigate = useNavigate();
     const {user} = useContext(UserContext);
     const {dni, jwt, full_name, user_id} = user;

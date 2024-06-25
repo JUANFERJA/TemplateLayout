@@ -1,18 +1,24 @@
 import React, { useContext } from 'react'
 import { Route, Routes} from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
-import { NuevoReclamoPage, ReaclamosPage } from '../pages';
+import { NewClaimPage, InsuredClaimsPage, AnalistClaimsPage, ClaimDetailPage } from '../pages';
 
 
 export const RoutesApp = () => {
   const{user} = useContext(UserContext);
   return (
     <Routes>
-        <Route path={`/misReclamos/:idUsuario`}
-               element={<ReaclamosPage user={user}/>}>
+        <Route path={`/insuredReclamos/:idUsuario`}
+               element={<InsuredClaimsPage user={user}/>}>
         </Route> 
+        <Route path={`/analistReclamos/:idUsuario`}
+               element={<AnalistClaimsPage user={user}/>}>
+        </Route>
+        <Route path={`/DetailClaim/:idClaim`}
+               element={<ClaimDetailPage user={user}/>}>
+        </Route>
         <Route path={`/nuevoReclamo/:idUsuario`}
-               element={<NuevoReclamoPage user={user}/>}>
+               element={<NewClaimPage user={user}/>}>
         </Route>      
     </Routes>
   )

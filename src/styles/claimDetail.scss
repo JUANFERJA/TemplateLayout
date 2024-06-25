@@ -1,0 +1,125 @@
+.claim{
+    height: 95%;
+    width: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background: black;
+    box-shadow: 4px 0px 6px 6px rgba(98, 236, 236, 0.25);
+    color: #91bec2;
+    /* background: rebeccapurple; */
+    .titles{
+        height: 10%;
+        /* background: lawngreen; */
+        font-family: "Roboto";
+        font-size: 18px;
+        font-weight: 600;
+        .id{
+            width: 49%;
+            text-align: initial;
+            padding: 20px;
+            /* background: lightcoral; */
+        }
+        .state{
+            margin-left: 2%;
+            text-align: initial;
+            padding: 20px;
+            width: 49%;
+            /* background: lightcoral; */
+        }
+    }
+
+    .claimdetails{
+        height: 90%;        
+        .inputs{
+            margin-top: 20px;
+            width: 49%;            
+            .datoClaim{
+                padding: 10px;
+                font-family: "Roboto";                
+                .label{
+                    margin-right: 15px;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    width: 40%;
+                    text-align: end;                   
+                }
+                .labelad{
+                    margin-right: 15px;                    
+                    width: 40%;
+                    text-align: end;
+                    
+                }
+                .input{
+                    height: 30px;
+                    width: 60%;
+                    /* background: lightgreen; */
+                }
+                .files-controls{
+                    width: 60%;
+                    
+                    .file-control{
+                        
+                        .label{                            
+                            margin-top: auto;
+                            width: 40%;
+                            text-align: end;
+                        }
+                        .files{
+                            margin-left: 20px;
+                            width: 60%;    
+                            a{
+                                font-size: 12px;
+                                color: #91bec2;
+                            }                       
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .actions{
+            width: 49%;
+            margin-left: 2%;
+            margin-top: 20px;
+            /* background: rebeccapurple; */
+            .action{
+                padding: 10px;
+                width: 70%;
+                font-family: "Roboto";                
+                /* background: red; */
+                /* margin-left: auto; */
+                margin-right: auto;
+                .icon{
+                    margin-right: 15px;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    width: 40%;
+                    text-align: end;
+                    /* background: lightblue; */
+                    font-size: 20px;
+                }
+                .label{
+                    height: 30px;
+                    width: 60%;
+                    /* background: lightgreen; */
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+            }
+        }
+        .observation{
+            width: 90%;
+            margin-right: auto;
+            /* margin-left: auto; */
+            margin-top: 30px;
+            font-family: "Roboto";
+            .label{
+                text-align: initial;
+            }
+        }
+    }
+}

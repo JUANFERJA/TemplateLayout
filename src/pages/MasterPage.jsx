@@ -4,6 +4,7 @@ import { Sidebar, NavBar } from '../components'
 import { UserContext } from '../context/UserContext'
 import { RoutesApp } from '../routes/RoutesApp'
 import { AuthRoutes } from '../routes/AuthRoutes'
+import { ClaimProvider } from '../context/ClaimProvider'
 
 
 export const MasterPage = () => {
@@ -24,7 +25,9 @@ export const MasterPage = () => {
                           <Sidebar user={user} setlogin = {setlogin}/>
                         </div>
                         <div className='main'>
-                          <RoutesApp/>
+                          <ClaimProvider>
+                            <RoutesApp/>
+                          </ClaimProvider>
                         </div>
                     </div>
                   </>

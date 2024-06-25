@@ -15,8 +15,8 @@ export const Sidebar = ({user, setlogin}) => {
 
 
     useEffect(() => {
-    console.log("entra el aefect");         
-    let url = `${apiPathJava}menu/1`;
+    console.log("entra el aefect", rol_id);         
+    let url = `${apiPathJava}menu/${rol_id}`;
     let options = {    
         headers: { 
             'Authorization': `Bearer ${jwt}`,
@@ -46,7 +46,7 @@ export const Sidebar = ({user, setlogin}) => {
                         data.map(elemento =>(
                             <div className="card">
                                 <div className="card-header d-flex">
-                                    {console.log('elemento', elemento)}
+                                   
                                 <i className={`fa ${elemento.icon} fa1`}></i>
                                 {elemento.childrens === null?(
                                     <Link className="text"to={`/${elemento.url}/${rol_id}`}>{elemento.description}</Link>):
@@ -95,7 +95,6 @@ const Subniveles = ({data, id, user}) =>{
                     </div>
                 <div id={`collapse${elemento.id_menu}`} className="collapse" data-bs-parent={`#accordion${id}`}>
                     <div className="card-body p-0">
-                        {console.log(elemento.children)}
                         {elemento.childrens != null &&(<Subniveles data = {elemento.children} id = {elemento.nivel} user={user}/>)}
                     </div>
                 </div>
