@@ -21,10 +21,8 @@ export const OptionBeneficiario = ({objeto}) => {
 
             api.get(url, options).then((res) => {
                 if (!res.err) {     
-                    console.log("en lo correcto",res);        
                     setbeneficiarios(res);  
                 }else{
-                  console.log(res);
                   setbeneficiarios(res);
                   swal("Ups!",res.statusText+": token o usuario no autorizado", "error");
                 }});

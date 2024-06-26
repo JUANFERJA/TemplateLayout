@@ -58,12 +58,9 @@ export const funcionesRegistrarReclamo = () => {
     fechaRegistro = fechaRegistro.toDateString();
     let state = "new";
     
-    let documentoName = await saveFile(documento, "documento");
-    let facturaName = await saveFile(factura, "factura");
+    
    
     let data = {
-      documentos:documentoName,
-      facturas:facturaName, 
       "beneficiary_id":beneficiario,
       "diagnostic_id":diagnostico,
       "value":valor,
@@ -71,7 +68,7 @@ export const funcionesRegistrarReclamo = () => {
       "sinister_date":fechaSiniestro,
       "description":descripcion,
       "state":state,
-      "insured_id;":user_id
+      "insured_id":user_id
     }
     console.log("data para un nuevo reclamo", data)
     data.id = Date.now();
@@ -80,9 +77,14 @@ export const funcionesRegistrarReclamo = () => {
     body: data,
     headers: { "content-type": "application/json" },
     };
-    api.post(url, options).then((res) => {        
+    api.post(url, options).then((res) => { 
+
+      console.log("mi respuesta claim", res)
+      saveFile(documento, "documento", res.id_claim);
+      saveFile(factura, "factura", res.id_claim); 
     });
-   
+    
+     
     navigate(`/misReclamos/${user_id}`)
 
   }
@@ -91,26 +93,21 @@ export const funcionesRegistrarReclamo = () => {
     document.getElementById(id).click();
   }
 
-  const saveFile = async (files, tipo) =>{
-    let FileName = [];
-    const f = new FormData();
-
-    for (let i = 0; i < files.length; i++) {        
-      FileName.push({
-        name:files[i].name,
-        type_file:tipo,
-        path_file:`C:/inetpub/wwwroot/static/media/reclamos/${files[i].name}`
-      })
-      f.append("files", files[i])
-  }
+  const saveFile = async (files, tipo, id_claim) =>{
    
-    await axios.post(`${apiFiles}saveFilesReclamos`, f).then(response => {
-      console.log("mi respuesta", response)
-    }).catch(error =>{
-      console.log("mi respuesta", error)           
-    })  ;
-
-    return FileName
+    
+    for (let i = 0; i < files.length; i++) { 
+      const f = new FormData();       
+      f.append("file", files[i]);
+      await axios.post(`${apiFiles}upload/${tipo}/${id_claim}`, f).then(response => {
+        console.log("mi respuesta", response)
+      }).catch(error =>{
+        console.log("mi respuesta", error)           
+      })  ;
+    }
+   
+    
+    
   }
 
 

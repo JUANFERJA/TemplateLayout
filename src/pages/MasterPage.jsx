@@ -24,7 +24,7 @@ export const MasterPage = () => {
                         <div className='sidebar'>
                           <Sidebar user={user} setlogin = {setlogin}/>
                         </div>
-                        <div className='main'>
+                        <div className='main d-flex'>
                           <ClaimProvider>
                             <RoutesApp/>
                           </ClaimProvider>

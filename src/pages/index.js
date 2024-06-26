@@ -5,3 +5,4 @@ export *from './RegistroPage';
 export *from './NewClaimPage';
 export *from './AnalistClaimsPage';
 export *from './ClaimDetailPage';
+export *from './AccidentRatePage';

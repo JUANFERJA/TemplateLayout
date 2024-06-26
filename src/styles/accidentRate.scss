@@ -1,0 +1,49 @@
+.container{
+
+    background: black;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 90%;
+    box-shadow: 4px 0px 6px 6px rgba(98, 236, 236, 0.25);
+    .policyInfo{
+        width: 40%;
+        height: 25%;
+        padding: 10px;
+        .label{
+            font-size: 16px;
+            font-family: "Roboto";
+            color: #91bec2;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-right: 10px;
+            text-align: end;
+            width: 40%;
+        }
+
+        .input{
+            height: 30px;
+        }
+    }
+
+    .data{
+        height: 73%;
+        color: #91bec2;
+        border: solid 1px #91bec2;
+
+        table{
+            thead{
+                tr{
+                    th{
+                        border: solid 1px #91bec2;
+                        padding: 3px;
+                        font-size: 15px;
+                        font-family: "Roboto";
+                    }
+                }
+            }
+        }
+    }
+}
