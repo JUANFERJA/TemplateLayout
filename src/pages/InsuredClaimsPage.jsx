@@ -12,9 +12,9 @@ export const InsuredClaimsPage = () => {
   
   
   return (
-    <div className='d-flex flex-column'>
+    <div className='d-flex flex-column container'>
         <h3>mis reclamos</h3>
-        <div class="container containerReclamos mt-3">
+        <div class="containerReclamos mt-3">
           <table class="table table-hover table-dark">
             <thead>
               <tr>

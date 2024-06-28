@@ -7,4 +7,27 @@ h3{
 .containerReclamos{
     margin: 0;
     padding: 3%;
+    table{
+        thead{
+            tr{
+                th{
+                   /*  border: solid 1px #91bec2; */
+                    padding: 3px;
+                    font-size: 15px;    
+                    color: #91bec2;  
+                    text-align: initial;                       
+                }
+            }
+        }
+        tbody{
+            tr{
+                td{
+                   /*  border: solid 1px #91bec2; */
+                    padding: 3px;
+                    font-size: 14px;   
+                    text-align: initial;                     
+                }
+            }
+        }
+    }
 }

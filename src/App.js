@@ -10,7 +10,7 @@ function App() {
   return (
     <UserProvider>
       <BrowserRouter>      
-        <div className="App">
+        <div className="App d-flex flex-column">
           <MasterPage/>
         </div>
       </BrowserRouter>

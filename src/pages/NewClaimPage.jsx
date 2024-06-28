@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const NewClaimPage = () => {
     const navigate = useNavigate();
-    const {user} = useContext(UserContext);
+    const {user, setlogin} = useContext(UserContext);
     const {dni, jwt, full_name, user_id} = user;
     const {upLoadFile, validaData} = funcionesRegistrarReclamo();
     const {addValue} = funcionesForms();
@@ -101,7 +101,7 @@ export const NewClaimPage = () => {
                        onChange={(e)=>addValue(e.target, "lblvalor", setvalor)}>
                 </input>                
             </div>
-            <button className='btn btn-secondary save' onClick={() =>validaData({documento, factura, beneficiario, diagnostico, valor, descripcion,selectedDate, user_id, navigate})}>Registrar reclamo</button>
+            <button className='btn btn-secondary save' onClick={() =>validaData({documento, factura, beneficiario, diagnostico, valor, descripcion,selectedDate, user_id, navigate, setlogin})}>Registrar reclamo</button>
         </div>
 
         

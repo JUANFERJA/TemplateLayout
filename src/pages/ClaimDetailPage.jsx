@@ -7,12 +7,13 @@ import swal from 'sweetalert';
 import { paths } from '../helpers/paths';
 import { funcionesClaimDetailPage } from '../Functions/funcionesClaimDetailPage';
 import { useNavigate } from 'react-router-dom';
+import { BtnReturn } from '../components/BtnReturn/BtnReturn';
 
 export const ClaimDetailPage = () => {
    
     const {claim} = useContext(ClaimContext);    
     const {id_claim, cod_diagnostic, creation_date, diagnostic, value, state,dni, full_name } = claim;
-    const {goAccidentRatePage} = funcionesClaimDetailPage();
+    const {goAccionPage} = funcionesClaimDetailPage();
     let navigate = useNavigate();
 
   return (
@@ -27,6 +28,7 @@ export const ClaimDetailPage = () => {
             <DatoClaim objeto = {{id:"ID:", value:id_claim}}/>
             <DatoClaim objeto = {{id:"ASEGURADO:", value:full_name}}/>
             <DatoClaim objeto = {{id:"NRO. DOCUMENTO:", value:dni}} />
+            <DatoClaim objeto = {{id:"DIAGNÓSTICO:", value:diagnostic}}/>
             <DatoClaim objeto = {{id:"VALOR RECLAMO:", value:value}}/>
             <DatoClaim objeto = {{id:"FECHA REGISTRO:", value:creation_date}}/>
             <div className='datoClaim d-flex flex-row'>
@@ -41,8 +43,8 @@ export const ClaimDetailPage = () => {
          {/*  <div className='d-flex flex-column actionsButtons'> */}
             <ActionClaim objeto={{icon:"fa fa-pencil", label:"Editar"}}/>  
             <ActionClaim objeto={{icon:"fa fa-trash-o", label:"Anular"}}/>
-            <ActionClaim objeto={{icon:"fa fa-check-circle-o", label:"Aprobar"}}/>
-            <ActionClaim objeto={{icon:"fa fa-clock-o", label:"Siniestralidad",action:() =>goAccidentRatePage(navigate)}}/>              
+            <ActionClaim objeto={{icon:"fa fa-check-circle-o", label:"Aprobar", action:() =>goAccionPage(navigate, "payOrder")}} />
+            <ActionClaim objeto={{icon:"fa fa-clock-o", label:"Siniestralidad",action:() =>goAccionPage(navigate, "accidentRate")}}/>              
          {/*  </div> */}
 
           <div className='d-flex flex-column observation'>
@@ -51,6 +53,7 @@ export const ClaimDetailPage = () => {
           </div>
         </div>
       </div>
+      <BtnReturn/>
     </div>
   )
 }
@@ -91,7 +94,7 @@ const Files = ({objeto}) =>{
     useEffect(() => {      
     
         api.get(url,options).then((res) =>{
-            if(!res.err){setFiles(res); console.log("respuesta files", res)}else{
+            if(!res.err){setFiles(res)}else{
               swal("Ups!",res.statusText+": token o usuario no autorizado", "error");
             }
         })

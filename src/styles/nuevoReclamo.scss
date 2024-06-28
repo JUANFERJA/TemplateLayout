@@ -62,3 +62,17 @@
         margin-top: 3.5%;
     }
 }
+
+.nuevoReclamo {
+    overflow:auto;   
+}
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+.nuevoReclamo::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.nuevoReclamo::-webkit-scrollbar:vertical {
+    width:0px;
+}

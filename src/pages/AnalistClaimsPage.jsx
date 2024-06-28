@@ -13,9 +13,9 @@ export const AnalistClaimsPage = () => {
     const {full_name} = user;
   return (
    
-    <div className='d-flex flex-column'>
+    <div className='d-flex flex-column container'>
         <h3>Trabajos Asignados: {full_name}</h3>
-        <div class="container containerReclamos mt-3">
+        <div class="containerReclamos mt-3">
           <table class="table table-hover table-dark">
             <thead>
               <tr>
@@ -68,7 +68,7 @@ const MisReclamos = () =>{
     const goDetailClaim =(elemento)=>{
 
        setclaim(elemento);
-       navigate(`/DetailClaim/${elemento.id_claim}`)
+       navigate(`/detailClaim/${elemento.id_claim}`)
     }
       
     return(
@@ -89,7 +89,7 @@ const MisReclamos = () =>{
                     <td>{`${elemento.sinister_date}`}</td>
                     <td>{`${elemento.state}`}</td>
                     <td>{`${elemento.value}`}</td>
-                    <td><i className={`fa fa-eye`} onClick={() =>goDetailClaim(elemento)}></i></td>
+                    <td><i className={`fa fa-eye`} onClick={() =>goDetailClaim(elemento)} style={{cursor:"pointer"}}></i></td>
                   </tr>
                 ))):(
                   <tr>

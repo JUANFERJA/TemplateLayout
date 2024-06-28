@@ -29,18 +29,24 @@
     }
 
     .data{
-        height: 73%;
         color: #91bec2;
-        border: solid 1px #91bec2;
-
         table{
             thead{
                 tr{
                     th{
-                        border: solid 1px #91bec2;
+                       /*  border: solid 1px #91bec2; */
                         padding: 3px;
-                        font-size: 15px;
-                        font-family: "Roboto";
+                        font-size: 11px;    
+                        color: #91bec2;                    
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    th{
+                       /*  border: solid 1px #91bec2; */
+                        padding: 3px;
+                        font-size: 11px;                        
                     }
                 }
             }

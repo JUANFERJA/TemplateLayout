@@ -50,7 +50,7 @@ export const funcionesRegistrarReclamo = () => {
   }
   const saveReclamo = async(objeto) =>{
 
-    const {documento, factura, beneficiario, diagnostico, valor, selectedDate, descripcion, user_id, navigate} = objeto;
+    const {documento, factura, beneficiario, diagnostico, valor, selectedDate, descripcion, user_id, navigate, setlogin} = objeto;
 
     let fecha = new Date(selectedDate);    
     let fechaSiniestro = fecha.toDateString();
@@ -84,9 +84,9 @@ export const funcionesRegistrarReclamo = () => {
       saveFile(factura, "factura", res.id_claim); 
     });
     
-     
-    navigate(`/misReclamos/${user_id}`)
-
+    await setlogin(false);
+    navigate(`/insuredReclamos/${user_id}`)
+    setlogin(true)
   }
 
   const enableInputFile = (id) =>{

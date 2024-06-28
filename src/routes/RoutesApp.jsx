@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { Route, Routes} from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
-import { NewClaimPage, InsuredClaimsPage, AnalistClaimsPage, ClaimDetailPage, AccidentRatePage } from '../pages';
+import { NewClaimPage, InsuredClaimsPage, AnalistClaimsPage, ClaimDetailPage, AccidentRatePage, PayOrderPage } from '../pages';
+
 
 
 export const RoutesApp = () => {
@@ -14,15 +15,18 @@ export const RoutesApp = () => {
         <Route path={`/analistReclamos/:idUsuario`}
                element={<AnalistClaimsPage user={user}/>}>
         </Route>
-        <Route path={`/DetailClaim/:idClaim`}
+        <Route path={`/detailClaim/:idClaim`}
                element={<ClaimDetailPage user={user}/>}>
         </Route>
         <Route path={`/nuevoReclamo/:idUsuario`}
                element={<NewClaimPage user={user}/>}>
         </Route>     
-        <Route path={`/AccidentRate`}
+        <Route path={`/accidentRate`}
                element={<AccidentRatePage/>}>
         </Route> 
+        <Route path={`/payOrder`}
+               element={<PayOrderPage/>}>
+        </Route>
     </Routes>
   )
 }

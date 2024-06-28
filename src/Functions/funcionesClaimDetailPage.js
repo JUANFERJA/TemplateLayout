@@ -1,13 +1,13 @@
 
 export const funcionesClaimDetailPage = () => {
   
-    const goAccidentRatePage = (navigate) =>{
+    const goAccionPage = (navigate, ruta) =>{
 
-        navigate("/AccidentRate");
+        navigate(`/${ruta}`);
     }
   
   
     return {
-        goAccidentRatePage
+        goAccionPage
     }
 }
