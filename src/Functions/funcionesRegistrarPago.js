@@ -34,7 +34,7 @@ export const funcionesRegistrarPago = () => {
         }
         if(res == true){
             saveData(dataUpdateClaim, "updateStateClaim");
-            swal("Ups!","El pago se registro con éxito","success");
+            swal("Felicitaciones!","El pago se registro con éxito","success");
             await setlogin(false);
             navigate(`/analistReclamos/${analist_id}`)
             setlogin(true)
