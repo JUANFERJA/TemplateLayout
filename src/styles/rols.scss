@@ -1,13 +1,9 @@
-h3{
-    color:aliceblue;
+.containerRoles{
+    width: 70%;
     margin-right: auto;
-    padding: 3%;
-}
-
-.containerReclamos{
-    margin: 0;
-    padding: 3%;
+    margin-left: auto;
     table{
+       
         thead{
             tr{
                 th{
@@ -24,17 +20,18 @@ h3{
                 td{
                    /*  border: solid 1px #91bec2; */
                     padding: 3px;
-                    font-size: 14px;   
                     text-align: initial;                     
                 }
             }
         }
     }
+   
 }
-
 .grabar{
     width: 70%;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     .btnGrabar{
         margin-left: auto;
     }

@@ -7,3 +7,6 @@ export *from './AnalistClaimsPage';
 export *from './ClaimDetailPage';
 export *from './AccidentRatePage';
 export *from './PayOrderPage';
+export *from './UsersMangmentPage';
+export *from './RolsAccessPage';
+export *from './ConfigurationPage';

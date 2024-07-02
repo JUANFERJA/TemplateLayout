@@ -1,0 +1,36 @@
+.header{
+    width: 100%;
+    /* background: rebeccapurple; */
+    h3{
+        width: 50%;
+    }
+
+    .search{
+        width: 50%;
+        padding: 3%;
+        margin-left: auto;
+        margin-right: auto;
+        .form-outline{
+            width: 90%;
+        }
+        .input-search{
+            height: 34px;
+            border-bottom-right-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+        .lbl-search{
+            color: #91bec2;
+        }
+        .bt-search{
+            height: 34px;
+            background: #91bec2;
+        }
+    }
+    .grabar{
+        width: 90%;
+        margin-top: 20px;
+        .btnGrabar{
+            margin-left: auto;
+        }
+    }
+}

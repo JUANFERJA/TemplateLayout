@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Route, Routes} from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
-import { NewClaimPage, InsuredClaimsPage, AnalistClaimsPage, ClaimDetailPage, AccidentRatePage, PayOrderPage } from '../pages';
+import { NewClaimPage, InsuredClaimsPage, AnalistClaimsPage, ClaimDetailPage, AccidentRatePage, PayOrderPage, UsersMangmentPage, RolsAccessPage, ConfigurationPage } from '../pages';
 
 
 
@@ -26,6 +26,15 @@ export const RoutesApp = () => {
         </Route> 
         <Route path={`/payOrder`}
                element={<PayOrderPage/>}>
+        </Route>
+        <Route path={`/usersMangment/:idUsuario`}
+               element={<UsersMangmentPage/>}>
+        </Route>
+        <Route path={`/rolesMangment/:idUsuario`}
+               element={<RolsAccessPage/>}>
+        </Route>
+        <Route path={`/mangment/:idUsuario`}
+               element={<ConfigurationPage/>}>
         </Route>
     </Routes>
   )

@@ -32,6 +32,7 @@ export const funciones = () => {
         setuser(res);
         setlogin(true);
         let urlComponent = res.rol_id == 2 ? "analistReclamos" : "insuredReclamos";
+        urlComponent = res.rol_id == 3 ? "usersMangment": urlComponent;
         navigate(`/${urlComponent}/${res.rol_id}`);
              
     }else{
