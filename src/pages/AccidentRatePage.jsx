@@ -4,6 +4,7 @@ import '../styles/accidentRate.scss'
 import { paths } from '../helpers/paths'
 import useFetch from '../helpers/useFetch';
 import { BtnReturn } from '../components/BtnReturn/BtnReturn';
+import { ControlComponent } from '../components/FormControls';
 
 
 const {apiPathJava} = paths();
@@ -48,16 +49,7 @@ export const AccidentRatePage = () => {
  )
 }
 
-const ControlComponent =({objeto})=>{
 
-    const {label, value} = objeto;
-    return(
-            <div className='control-component d-flex flex-row mt-2'>
-                <label className='label'>{label}</label>
-                <input className='form-control input' value={value} disabled></input>
-            </div>
-        )
-}
 
 const Siniestralidad =({id_beneficiary}) =>{
 

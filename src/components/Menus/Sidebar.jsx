@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import swal from 'sweetalert';
 import { Link, useNavigate } from 'react-router-dom';
-import { funcionCollapseSidebar } from '../Functions/funcionCollapseSidebar';
-import { paths } from '../helpers/paths';
-import { helpHttp } from '../helpers/helpHttp';
+import { funcionCollapseSidebar } from '../../Functions/funcionCollapseSidebar';
+import { paths } from '../../helpers/paths';
+import { helpHttp } from '../../helpers/helpHttp';
 
-export const Sidebar = ({user, setlogin}) => {
+export const Sidebar = ({user, setlogin, company}) => {
     const{apiPathJava} = paths();
     let  api = helpHttp();
     let navigate = useNavigate();
@@ -40,7 +40,7 @@ export const Sidebar = ({user, setlogin}) => {
         {
             !data? (<>no authorized</>):
             (
-                <div id="accordion" className='menuCollapse'>
+                <div id="accordion" className='menuCollapse d-flex flex-column'>
                     {
                        !data.err &&(
                         data.map(elemento =>(
@@ -70,7 +70,11 @@ export const Sidebar = ({user, setlogin}) => {
                                 <span className='span'>Salir</span>                        
                             </a>
                             </div>               
-                        </div>       
+                        </div>    
+
+                        <div className='footer'>
+                            <label className='label'>{company.footer}</label>
+                        </div>   
                 </div>
             )
         }

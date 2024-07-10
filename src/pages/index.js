@@ -10,3 +10,4 @@ export *from './PayOrderPage';
 export *from './UsersMangmentPage';
 export *from './RolsAccessPage';
 export *from './ConfigurationPage';
+export *from './UpdateUserPage';

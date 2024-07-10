@@ -29,11 +29,17 @@ export const funciones = () => {
 
     api.post(url, options).then((res) => {
     if (!res.err) {     
-        setuser(res);
-        setlogin(true);
-        let urlComponent = res.rol_id == 2 ? "analistReclamos" : "insuredReclamos";
-        urlComponent = res.rol_id == 3 ? "usersMangment": urlComponent;
-        navigate(`/${urlComponent}/${res.rol_id}`);
+      console.log("mi respuesta", res)
+        if(res.message){
+          swal("Ups!","Usuario Deshabilitado o Bloqueado, pongase en contacto con el administrador...", "error");
+        }else{
+              setuser(res);
+              setlogin(true);
+              let urlComponent = res.rol_id == 2 ? "analistReclamos" : "insuredReclamos";
+              urlComponent = res.rol_id == 3 ? "usersMangment": urlComponent;
+              navigate(`/${urlComponent}/${res.rol_id}`);
+          }
+        
              
     }else{
       console.log(res);

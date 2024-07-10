@@ -1,4 +1,9 @@
 import swal from 'sweetalert';
+import { helpHttp } from '../helpers/helpHttp';
+import { paths } from '../helpers/paths';
+let api = helpHttp();
+let path = paths();
+const {apiPathJava} = path;
 
 export const funcionesRegistrar = () => {
   
@@ -52,7 +57,25 @@ export const funcionesRegistrar = () => {
    
   }
   
+  const updateUser = (objeto, navigate) =>{
+      
+      let url = `${apiPathJava}updateUser`;
+      let options = {    
+          headers: {"content-type": "application/json"},
+          body:objeto
+      };
+  
+      api.post(url, options).then((res) => {
+      if (!res.err) {     
+        console.log("mis datos", url, objeto)
+          swal("Congratulations!","El registro se ha grabado con éxito","success");             
+          navigate(-1);
+      }else{
+        console.log(res);        
+      }});
+  }
   return{
-    validaData
+    validaData,
+    updateUser
   }
 }

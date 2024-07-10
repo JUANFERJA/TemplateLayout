@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../styles/usuarios.scss'
 import { helpHttp } from '../helpers/helpHttp';
 import { paths } from '../helpers/paths';
+import { useNavigate } from 'react-router-dom';
+import { UpdateUserContext } from '../context/UpdateUserContext';
 
 let  api = helpHttp();
 const {apiPathJava} = paths();
@@ -50,6 +52,7 @@ export const UsersMangmentPage = () => {
                 <th>NOMBRE</th>
                 <th>CORREO</th>
                 <th>PERFIL</th>
+                <th>STATUS</th>
                 <th>ACCION</th>
               </tr>
             </thead>
@@ -64,12 +67,20 @@ export const UsersMangmentPage = () => {
 }
 
 const Usuarios = ({usuarios, setusuarios, parametro}) =>{
-    
-   
+  
+    let navigate = useNavigate();
+    const{setuserUpdate} = useContext(UpdateUserContext);
+
+    const goUpdateUser = (usuario) =>{
+       navigate(`/updateUsuario`);
+       setuserUpdate(usuario)
+    } 
+
+
     useEffect(() => {
                
       let url = `${apiPathJava}getAllUsersByName/${parametro}`;
-      console.log("entra el aefect", url);
+      
       let options = {    
           headers: { 
               "content-type": "application/json" 
@@ -80,9 +91,9 @@ const Usuarios = ({usuarios, setusuarios, parametro}) =>{
       if (!res.err) {                  
           setusuarios(res);  
       }else{
-        console.log(res);        
+      
       }});
-      }, [parametro])
+    }, [parametro])
 
   
     return(
@@ -94,10 +105,11 @@ const Usuarios = ({usuarios, setusuarios, parametro}) =>{
                 usuarios.length > 0 ? (
                     usuarios.map(elemento =>(
                         <tr>
-                          <td>{elemento.full_name}</td>
+                          <td>{elemento.full_name}</td>                          
                           <td>{elemento.email}</td>
-                          <td><span>{elemento.roles[0].name}</span></td>
-                          <td><i className={`fa fa-pencil`}></i></td>
+                          <Rol id = {elemento.rol_id}/>
+                          <Status id = {elemento.status}/>
+                          <td><i className={`fa fa-pencil`} onClick={() => goUpdateUser(elemento)}></i></td>
                         </tr>
                       ))
                 ) :(
@@ -112,6 +124,84 @@ const Usuarios = ({usuarios, setusuarios, parametro}) =>{
             </>
           )
         }
+      </>
+    )
+  }
+
+  const Rol = ({id}) =>{
+    const [roles, setroles] = useState();
+    let url = `${apiPathJava}getRoles`;
+    
+    
+
+    useEffect(() => {
+       let options = {    
+            headers: { 
+                "content-type": "application/json" 
+            },
+        };
+    
+        api.get(url, options).then((res) => {
+        if (!res.err) {                  
+          setroles(res);  
+        }else{
+          console.log(res);        
+        }});
+    }, [])
+    
+    return(
+      <>
+       {roles && (
+        <>
+          {
+            roles.map(elemento =>(
+              elemento.id == id &&
+                (
+                 <td><span>{elemento.name}</span></td>
+                )
+              ))
+          }  
+         </>               
+        )}       
+      </>
+    )
+  }
+
+  const Status = ({id}) =>{
+    const [status, setsatus] = useState();
+    let url = `${apiPathJava}getStatus`;
+    
+    
+
+    useEffect(() => {
+       let options = {    
+            headers: { 
+                "content-type": "application/json" 
+            },
+        };
+    
+        api.get(url, options).then((res) => {
+        if (!res.err) {                  
+          setsatus(res);  
+        }else{
+          console.log(res);        
+        }});
+    }, [])
+    
+    return(
+      <>
+       {status && (
+        <>
+          {
+            status.map(elemento =>(
+              elemento.id_status == id &&
+                (
+                 <td><span>{elemento.description}</span></td>
+                )
+              ))
+          }  
+         </>               
+        )}       
       </>
     )
   }

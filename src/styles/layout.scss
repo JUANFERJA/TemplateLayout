@@ -32,6 +32,7 @@
                 margin-top: 30px;
                 background: transparent;
                 color: #465D5F;
+                height: 83vh;
                 .card{
                     background: transparent;
                     
@@ -53,6 +54,7 @@
                         cursor: pointer;  
                         margin-left: 20px               
                     }
+                    
                     .text2{
                         text-decoration: none;
                         color: #2b4042;
@@ -62,6 +64,33 @@
                         text-align: initial;                    
                     }
                    
+                }
+                .card:hover{
+                    background: #8291c5;
+                    .text{
+                        text-decoration: none;
+                        color: #2b4042;
+                        font-size: 22.5px;
+                        font-weight: 800;
+                        width: 85%;
+                        text-align: initial;   
+                        cursor: pointer;  
+                        margin-left: 20px               
+                    }
+                    .fa1{
+                        font-size: 32px;
+                        color: #2b4042;
+                        margin-right: auto;
+                        width: 10%;
+                    }
+                }
+                .footer{
+                    margin-top: auto;
+                    .label{
+                        font-size: 16px;
+                        font-weight: bold;
+                        color: #2b4042;
+                    }
                 }
             }
         }
@@ -78,6 +107,19 @@
         color: #2b4042;
         margin-right: auto;
         width: 10%;
+    }
+
+    .logo{
+            
+        color: white;
+        font-family: 'Roboto';
+        font-size: 32px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 0px 10px 7px#006c8f;
+        -webkit-text-stroke: 1px black;
+        margin-left: 20px;      
+        margin-top: -10px;
     }
 
     .faHamburguer{
@@ -153,4 +195,6 @@
     .left3{
         margin-left: 15px;
     }
+
+   
 }

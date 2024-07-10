@@ -4,6 +4,7 @@ import './styles/layout.scss'
 import { UserProvider } from './context/UserProvider';
 import { MasterPage } from './pages/MasterPage';
 import { BrowserRouter } from 'react-router-dom';
+import { CompanyProvider } from './context/CompanyProvider';
 function App() {
 
   
@@ -11,7 +12,9 @@ function App() {
     <UserProvider>
       <BrowserRouter>      
         <div className="App d-flex flex-column">
-          <MasterPage/>
+          <CompanyProvider>
+            <MasterPage/>
+          </CompanyProvider>
         </div>
       </BrowserRouter>
     </UserProvider>

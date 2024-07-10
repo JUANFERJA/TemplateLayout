@@ -1,18 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext} from 'react'
 import { ClaimContext } from '../context/ClaimContext'
-import { UserContext } from '../context/UserContext';
 import  '../styles/claimDetail.scss';
-import { helpHttp } from '../helpers/helpHttp';
-import swal from 'sweetalert';
-import { paths } from '../helpers/paths';
 import { funcionesClaimDetailPage } from '../Functions/funcionesClaimDetailPage';
 import { useNavigate } from 'react-router-dom';
 import { BtnReturn } from '../components/BtnReturn/BtnReturn';
+import { ActionClaim, DatoClaim, Files } from '../components/FormControls';
+
 
 export const ClaimDetailPage = () => {
    
     const {claim} = useContext(ClaimContext);    
-    const {id_claim, cod_diagnostic, creation_date, diagnostic, value, state,dni, full_name } = claim;
+    const {id_claim, creation_date, diagnostic, value, state,dni, full_name } = claim;
     const {goAccionPage} = funcionesClaimDetailPage();
     let navigate = useNavigate();
 
@@ -59,69 +57,7 @@ export const ClaimDetailPage = () => {
 }
 
 
-const DatoClaim = ({objeto}) =>{
 
-    const {id, value} = objeto;
-    return(
-        <div className='d-flex flex-row datoClaim'>
-            <label className='label'>{id}</label>
-            <input className='form-control input' value={value} disabled></input>
-        </div>
-    )
-}
 
-const ActionClaim = ({objeto}) =>{
-    const {icon, label, action} = objeto;
-   
-    return(
-        <div className='d-flex flex-row action'>
-          <i className={`${icon} icon`} onClick={action}></i>
-          <label>{label}</label>
-        </div>
-    )
-}
 
-const Files = ({objeto}) =>{
 
-    const {apiFiles} = paths();
-    const {tipo, id_claim} = objeto;
-    const [files, setFiles] = useState();
-    let text = tipo == "documento" ? "DOC0000" : "FAC0000";
-    let noFiles = tipo == "documento" ? "No existen documentos cargados" : "No existen facturas cargadas"
-    let url = `${apiFiles}files/${id_claim}/${tipo}`;
-    let api = helpHttp();
-    let options = {"content-type":"application/json"}
-    useEffect(() => {      
-    
-        api.get(url,options).then((res) =>{
-            if(!res.err){setFiles(res)}else{
-              swal("Ups!",res.statusText+": token o usuario no autorizado", "error");
-            }
-        })
-
-      
-    }, [])
-    
-    return(
-        <div className='file-control d-flex flex-row mt-3'>
-             <label className='label'>{`${tipo}: `}</label>
-             <div className='files d-flex flex-column'>
-               {
-                files &&(
-                    <>
-                      {
-                        files.length > 0 ? (
-                          files.map((elemento, indice) =>(
-                            <a href={`${apiFiles}files/${elemento.id}`} style={{fontSize:"11px"}}>{`${text}${indice+1}`}</a>              
-                        ))
-                        ):(
-                          <>{noFiles}</>
-                        )
-                      }
-                    </>
-                )
-               }
-             </div> 
-        </div>
-    )
-}
